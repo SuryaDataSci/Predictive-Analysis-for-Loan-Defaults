@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Default Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Loan Default Prediction</h1>
+    </header>
+    <main>
+        <section id="input-form">
+            <h2>Enter Loan Application Details</h2>
+            <form id="loan-form" action="/predict" method="post">
+                <label for="loan-amount">Loan Amount:</label>
+                <input type="number" id="loan-amount" name="loan_amount" required>
+
+                <label for="income">Annual Income:</label>
+                <input type="number" id="income" name="income" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="employment-status">Employment Status:</label>
+                <select id="employment-status" name="employment_status" required>
+                    <option value="employed">Employed</option>
+                    <option value="unemployed">Unemployed</option>
+                    <option value="self-employed">Self-Employed</option>
+                </select>
+
+                <label for="credit-score">Credit Score:</label>
+                <input type="number" id="credit-score" name="credit_score" required>
+
+                <button type="submit">Predict</button>
+            </form>
+        </section>
+        <section id="results">
+            <h2>Prediction Results</h2>
+            <p id="prediction-output">{{ prediction }}</p>
+        </section>
+        <section id="data-visualization">
+            <h2>Data Visualization</h2>
+            <div id="charts"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Loan Default Prediction</p>
+    </footer>
+</body>
+</html>
